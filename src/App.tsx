@@ -1,4 +1,7 @@
 import { Routes, Route, Outlet, Link } from "react-router-dom";
+import { Page, Text, View, Document, StyleSheet } from '@react-pdf/renderer';
+import { PDFViewer } from "@react-pdf/renderer";
+import Tiny from "./components/tiny"
 
 export default function App() {
   return (
@@ -74,17 +77,34 @@ function Home() {
 
 function About() {
   return (
-    <div>
-      <h2>About</h2>
-    </div>
+    <Tiny></Tiny>
   );
 }
 
 function Dashboard() {
+  // Create styles
+  const styles = StyleSheet.create({
+    page: {
+      flexDirection: 'row',
+      backgroundColor: '#E4E4E4',
+      textAlign: 'center'
+    },
+    section: {
+      margin: 10,
+      padding: 10,
+      flexGrow: 1
+    }
+  });
   return (
-    <div>
-      <h2>Dashboard</h2>
-    </div>
+    <PDFViewer>
+      <Document>
+        <Page size="A4" style={styles.page}>
+          <View style={styles.section}>
+            <Text>Section #1</Text>
+          </View>
+        </Page>
+      </Document>
+    </PDFViewer>
   );
 }
 
