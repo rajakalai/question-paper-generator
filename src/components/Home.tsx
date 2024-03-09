@@ -1,5 +1,13 @@
 import { useEffect, useReducer } from "react"
-import { Select } from "../common/input"
+// import { Select } from "../common/input"
+import Select  from 'react-select'
+import CustomSelectProps from "../common/customSelect"
+
+const options = [
+  { value: 'chocolate', label: 'Chocolate' },
+  { value: 'strawberry', label: 'Strawberry' },
+  { value: 'vanilla', label: 'Vanilla' }
+]
 
 let optionsData = [
     {name : 'sixth', value : 6},
@@ -54,8 +62,13 @@ const Home = () => {
     return (
         <div>
             Home components
-            <Select label='class' id='class' options={optionsData} OnChange={dispatch}/>
-            <Select label='subject' id='subject' options={subjectOptions} OnChange={dispatch}/>
+            {/* <Select label='class' id='class' options={optionsData} OnChange={dispatch}/>
+            <Select label='subject' id='subject' options={subjectOptions} OnChange={dispatch}/> */}
+            <div style={{display: 'flex',}}>
+                <Select options={options} />
+                <Select options={options} />
+                <CustomSelectProps />
+            </div>
         </div>
     )
 }
