@@ -50,6 +50,7 @@ const CustomSelectProps = (props: Props<ColourOption>) => {
       name="emoji"
       options={colourOptions}
       styles={styles}
+      onChange={(e) => {console.log('e', e)}}
     />
   );
 };

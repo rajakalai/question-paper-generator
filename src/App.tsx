@@ -1,11 +1,10 @@
 import { Routes, Route, Outlet, Link } from "react-router-dom";
 import Layout from "./hoc/layout";
-import Home from "./components/Home";
+import Home from "./pages/home";
 
 export default function App() {
   return (
     <div>
-      <h1>Basic Example</h1>
       {/* Routes nest inside one another. Nested route paths build upon
             parent route paths, and nested route elements render inside
             parent route elements. See the note about <Outlet> below. */}
